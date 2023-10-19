@@ -23,7 +23,7 @@ export default function HomeSlider() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiper homeSlider"
       >
         <SwiperSlide>
           <img className="rounded-xl relative" src="https://i.ibb.co/M8zh8Gm/8.png" alt="" />

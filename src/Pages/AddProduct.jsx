@@ -9,7 +9,8 @@ const AddProduct = () => {
         const type = form.type.value;
         const price = form.price.value;
         const rating = form.rating.value;
-        const formValue = {imglink,name,Bname,type,price,rating}
+        const description = form.description.value;
+        const formValue = {imglink,name,Bname,type,price,rating, description}
         console.log(formValue);
     }
   return (

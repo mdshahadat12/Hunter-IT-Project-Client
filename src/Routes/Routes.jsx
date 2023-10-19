@@ -5,6 +5,7 @@ import Login from "../Pages/Login";
 import Registration from "../Pages/Registration";
 import AddProduct from "../Pages/AddProduct";
 import BrandsPage from "../Components/BrandPage/BrandsPage";
+import ProductDetails from "../Components/BrandPage/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -29,8 +30,13 @@ export const router = createBrowserRouter([
             element: <AddProduct></AddProduct>
         },
         {
-            path:'/brandpage',
-            element: <BrandsPage></BrandsPage>
+            path:'/brand/:id',
+            element: <BrandsPage></BrandsPage>,
+        },
+        {
+            path:'/product/:id',
+            element: <ProductDetails></ProductDetails>,
+            loader: ()=>fetch('/api.json')
         },
       ]
     },

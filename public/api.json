@@ -1,0 +1,42 @@
+[
+    {"id": 1,
+    "Bname": "google",
+    "description":
+      "The Pixel 8 and Pixel 8 Pro are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They serve as the successor to the Pixel 6 and Pixel 6 Pro, respectively. The phones were first previewed in May 2022, during the Google I/O keynote. They are powered by the second-generation Google Tensor chip, and feature a design similar to that of the Pixel 6 series. They shipped with Android 13.",
+    "imglink": "https://i.ibb.co/nR3PZgQ/7.png",
+    "name": "Pixel 8",
+    "price": "1000",
+    "rating": "4",
+    "type": "Mobail"
+    },
+    {"id": 2,
+    "Bname": "google",
+    "description":
+      "The Pixel 8 and Pixel 8 Pro are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They serve as the successor to the Pixel 6 and Pixel 6 Pro, respectively. The phones were first previewed in May 2022, during the Google I/O keynote. They are powered by the second-generation Google Tensor chip, and feature a design similar to that of the Pixel 6 series. They shipped with Android 13.",
+    "imglink": "https://i.ibb.co/kQs24H4/6.png",
+    "name": "Pixel 8",
+    "price": "1000",
+    "rating": "4",
+    "type": "Mobail"
+    },
+    {"id": 3,
+    "Bname": "google",
+    "description":
+      "The Pixel 8 and Pixel 8 Pro are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They serve as the successor to the Pixel 6 and Pixel 6 Pro, respectively. The phones were first previewed in May 2022, during the Google I/O keynote. They are powered by the second-generation Google Tensor chip, and feature a design similar to that of the Pixel 6 series. They shipped with Android 13.",
+    "imglink": "https://i.ibb.co/RH3jdcG/3.png",
+    "name": "Pixel 8",
+    "price": "1000",
+    "rating": "4",
+    "type": "Mobail"
+    },
+    {"id": 4,
+    "Bname": "google",
+    "description":
+      "The Pixel 8 and Pixel 8 Pro are a pair of Android smartphones designed, developed, and marketed by Google as part of the Google Pixel product line. They serve as the successor to the Pixel 6 and Pixel 6 Pro, respectively. The phones were first previewed in May 2022, during the Google I/O keynote. They are powered by the second-generation Google Tensor chip, and feature a design similar to that of the Pixel 6 series. They shipped with Android 13.",
+    "imglink": "https://i.ibb.co/P5zrd5d/2.png",
+    "name": "Pixel 8",
+    "price": "1000",
+    "rating": "4",
+    "type": "Mobail"
+    }
+]
