@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import img from "../../assets/fav.png"
 
 const Footer = () => {
     return (
@@ -11,11 +10,11 @@ const Footer = () => {
                         <div className="mb-6 md:mb-0">
                             <Link to={"/"} className="flex items-center">
                                 <img
-                                    src={img}
+                                    src='https://i.ibb.co/3MmnJW0/download.png'
                                     className="h-8 mr-3"
                                 />
                                 <span className="self-center text-blue-500 text-2xl font-extrabold whitespace-nowrap dark:text-white">
-                                    Gamers Tech
+                                    Hunter Tech
                                 </span>
                             </Link>
                         </div>

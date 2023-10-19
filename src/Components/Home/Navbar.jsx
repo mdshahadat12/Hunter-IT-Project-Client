@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import img from "../../assets/fav.png";
 import userimg from "../../assets/Logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
@@ -35,7 +34,7 @@ const Navbar = () => {
     <nav className="bg-white border-gray-200 relative dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to={"/"} className="flex items-center">
-          <img src={img} className="h-8 mr-3" />
+          <img src='https://i.ibb.co/3MmnJW0/download.png' className="h-8 mr-3" />
           <span className="self-center text-blue-500 text-2xl font-extrabold whitespace-nowrap">
             Hunter IT
           </span>
@@ -166,7 +165,7 @@ const Navbar = () => {
             )}
             <li>
               <NavLink
-                to={"/about"}
+                to={"/addproduct"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -175,12 +174,12 @@ const Navbar = () => {
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                 }
               >
-                About
+                AddProduct
               </NavLink>
             </li>
             <li>
               <NavLink
-                to={"/contact"}
+                to={"/brandpage"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
