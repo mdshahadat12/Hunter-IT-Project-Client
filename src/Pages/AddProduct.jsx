@@ -5,7 +5,7 @@ const AddProduct = () => {
         const form = e.target;
         const imglink = form.imglink.value;
         const name = form.name.value;
-        const Bname = form.bname.value;
+        const Bname = form.bname.value.toLowerCase();
         const type = form.type.value;
         const price = form.price.value;
         const rating = form.rating.value;

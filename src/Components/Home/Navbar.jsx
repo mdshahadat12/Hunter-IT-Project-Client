@@ -123,10 +123,8 @@ const Navbar = () => {
             <li>
               <NavLink
                 to={"/"}
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
+                className={({ isActive }) =>
+                  isActive
                     ? "text-blue-700 underline block py-2 pl-3 pr-4"
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                 }
@@ -153,10 +151,8 @@ const Navbar = () => {
                 <li>
                   <NavLink
                     to={"/cart"}
-                    className={({ isActive, isPending }) =>
-                      isPending
-                        ? "pending"
-                        : isActive
+                    className={({ isActive }) =>
+                      isActive
                         ? "text-blue-700 underline block py-2 pl-3 pr-4"
                         : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                     }
