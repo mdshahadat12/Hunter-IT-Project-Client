@@ -24,6 +24,21 @@ const UpdateProduct = () => {
       description,
     };
     console.log(formValue);
+
+    fetch(`http://localhost:5000/product/${id.id}`,{
+      method:"PUT",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(formValue)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        console.log(data);
+        alert('updated')
+      });
+
   };
   console.log(id.id);
   const [data, setData] = useState({});
