@@ -18,7 +18,7 @@ const ProductCard = ({data}) => {
           {Bname}
         </h5>
         <h5 className="mb-2 tracking-tight">
-          Price: {price}
+          Price: ${price}
         </h5>
         </div>
         <div className="flex justify-between p-2 bg-blue-300 rounded-b-lg">

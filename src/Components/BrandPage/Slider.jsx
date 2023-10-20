@@ -30,25 +30,25 @@ export default function Slider({upData}) {
         <SwiperSlide>
           <img className="rounded-xl relative" src={upData[0]?.imglink} alt="" />
           <div className="bg-[#030303a4] flex flex-col justify-center absolute w-full h-full">
-          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">Lets Start The Game</h1>
-          <p className="text-white my-10 text-lg font-semibold">The ultimate Game Race</p>
-          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-blue-500">Book Now</button>
+          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">This Is Big opportunity</h1>
+          <p className="text-white my-10 text-lg font-semibold">The ultimate sale</p>
+          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-orange-500">See Details</button>
           </div>
           </SwiperSlide>
         <SwiperSlide>
           <img className="rounded-xl relative" src={upData[1]?.imglink} alt="" />
           <div className="bg-[#030303a4] flex flex-col justify-center absolute w-full h-full">
-          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">Lets Start The Game</h1>
-          <p className="text-white my-10 text-lg font-semibold">The ultimate Game Race</p>
-          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-blue-500">Book Now</button>
+          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">This Is Big opportunity</h1>
+          <p className="text-white my-10 text-lg font-semibold">The ultimate sale</p>
+          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-orange-500">See Details</button>
           </div>
           </SwiperSlide>
         <SwiperSlide>
           <img className="rounded-xl relative" src={upData[2]?.imglink} alt="" />
           <div className="bg-[#030303a4] flex flex-col justify-center absolute w-full h-full">
-          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">Lets Start The Game</h1>
-          <p className="text-white my-10 text-lg font-semibold">The ultimate Game Race</p>
-          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-blue-500">Book Now</button>
+          <h1 className=" text-center text-4xl md:text-7xl font-bold text-green-500">This Is Big opportunity</h1>
+          <p className="text-white my-10 text-lg font-semibold">The ultimate sale</p>
+          <button className="px-3 py-2 w-fit mx-auto rounded-lg text-white font-bold bg-orange-500">See Details</button>
           </div>
           </SwiperSlide>
       </Swiper>

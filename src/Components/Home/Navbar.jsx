@@ -38,7 +38,7 @@ const Navbar = () => {
             src="https://i.ibb.co/3MmnJW0/download.png"
             className="h-8 mr-3"
           />
-          <span className="self-center text-blue-500 text-2xl font-extrabold whitespace-nowrap">
+          <span className="self-center text-orange-500 text-2xl font-extrabold whitespace-nowrap">
             Hunter IT
           </span>
         </Link>
@@ -58,7 +58,7 @@ const Navbar = () => {
             </button>
           ) : (
             <NavLink to={"login"}>
-              <button className="py-2 px-4 rounded-lg text-white font-bold bg-blue-500">
+              <button className="py-2 px-4 rounded-lg text-white font-bold bg-orange-500">
                 Login
               </button>
             </NavLink>
@@ -125,7 +125,7 @@ const Navbar = () => {
                 to={"/"}
                 className={({ isActive }) =>
                   isActive
-                    ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                    ? "text-orange-700 underline block py-2 pl-3 pr-4"
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                 }
               >
@@ -141,7 +141,7 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                        ? "text-orange-700 underline block py-2 pl-3 pr-4"
                         : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                     }
                   >
@@ -153,7 +153,7 @@ const Navbar = () => {
                     to={"/cart"}
                     className={({ isActive }) =>
                       isActive
-                        ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                        ? "text-orange-700 underline block py-2 pl-3 pr-4"
                         : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                     }
                   >
@@ -168,7 +168,7 @@ const Navbar = () => {
                       isPending
                         ? "pending"
                         : isActive
-                        ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                        ? "text-orange-700 underline block py-2 pl-3 pr-4"
                         : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                     }
                   >
@@ -184,7 +184,7 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                    ? "text-orange-700 underline block py-2 pl-3 pr-4"
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                 }
               >
@@ -198,7 +198,7 @@ const Navbar = () => {
                   isPending
                     ? "pending"
                     : isActive
-                    ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                    ? "text-orange-700 underline block py-2 pl-3 pr-4"
                     : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                 }
               >

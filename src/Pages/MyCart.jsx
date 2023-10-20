@@ -12,7 +12,7 @@ const MyCart = () => {
           Your Product Cart
         </h1>
         <div className="grid md:grid-cols-2 gap-5">
-          {updateCard ? (
+          {updateCard.length > 0 ? (
             updateCard?.map((card) => (
               <CartCard key={card._id} dataArray={dataArray} setUpdateCard={setUpdateCard} card={card}></CartCard>
             ))

@@ -12,12 +12,14 @@ import Message from "../Pages/Message";
 import MyCart from "../Pages/MyCart";
 import UpdateProduct from "../Pages/UpdateProduct";
 import PrivetRoute from "./PrivetRoute";
+import Erorr from "../Pages/Erorr";
 
 
 export const router = createBrowserRouter([
     {
       path: "/",
       element: <HomeLayOut/>,
+      errorElement: <Erorr></Erorr>,
       children:[
         {
             path:'/',

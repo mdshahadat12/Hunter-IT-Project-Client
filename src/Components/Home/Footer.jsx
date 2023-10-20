@@ -13,7 +13,7 @@ const Footer = () => {
                                     src='https://i.ibb.co/3MmnJW0/download.png'
                                     className="h-8 mr-3"
                                 />
-                                <span className="self-center text-blue-500 text-2xl font-extrabold whitespace-nowrap dark:text-white">
+                                <span className="self-center text-orange-500 text-2xl font-extrabold whitespace-nowrap dark:text-white">
                                     Hunter Tech
                                 </span>
                             </Link>
@@ -56,10 +56,10 @@ const Footer = () => {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                                 <li className="mb-4">
-                                    <a href="https://flowbite.com/" className="hover:underline">Shahadat.com</a>
+                                    <a href="https://flowbite.com/" className="hover:underline">Hunter-IT.com</a>
                                 </li>
                                 <li>
-                                    <a href="https://tailwindcss.com/" className="hover:underline">React SPA</a>
+                                    <a href="https://tailwindcss.com/" className="hover:underline">Full stack Project</a>
                                 </li>
                             </ul>
                         </div>
@@ -89,7 +89,7 @@ const Footer = () => {
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
                 <div className="flex justify-center">
-                    <span className="text-sm text-gray-500">© 2023 Gamers Tech™ . All Rights Reserved.
+                    <span className="text-sm text-gray-500">© 2023 Hunter IT™ . All Rights Reserved.
                     </span>
                 </div>
             </div>
