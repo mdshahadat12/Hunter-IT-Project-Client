@@ -12,13 +12,13 @@ const BrandsPage = () => {
   // // console.log(data);
 
   useEffect(() => {
-    fetch("/api.json")
+    fetch("http://localhost:5000/product")
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         const filterData = data?.filter((data) => data.Bname == brand);
         setUpData(filterData);
-        // console.log(filterData);
+        console.log(filterData);
       });
   }, [brand]);
 
@@ -30,7 +30,7 @@ const BrandsPage = () => {
           <h1 className="text-center font-bold text-3xl mb-5">Products</h1>
           <div className="grid grid-cols-2 gap-5 my-10">
             {upData?.map((data) => (
-              <ProductCard key={data.id} data={data}></ProductCard>
+              <ProductCard key={data._id} data={data}></ProductCard>
             ))}
           </div>
         </div>

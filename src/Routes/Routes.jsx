@@ -6,6 +6,11 @@ import Registration from "../Pages/Registration";
 import AddProduct from "../Pages/AddProduct";
 import BrandsPage from "../Components/BrandPage/BrandsPage";
 import ProductDetails from "../Components/BrandPage/ProductDetails";
+import Profile from "../Pages/Profile";
+import About from "../Pages/About";
+import Message from "../Pages/Message";
+import MyCart from "../Pages/MyCart";
+import UpdateProduct from "../Pages/UpdateProduct";
 
 
 export const router = createBrowserRouter([
@@ -37,8 +42,27 @@ export const router = createBrowserRouter([
         {
             path:'/product/:id',
             element: <ProductDetails></ProductDetails>,
-            loader: ()=>fetch('/api.json')
         },
+        {
+            path:'/profile',
+            element: <Profile></Profile>
+        },
+        {
+            path:'/about',
+            element: <About></About>
+        },
+        {
+            path:'/contact',
+            element: <Message></Message>
+        },
+        {
+            path:'/cart',
+            element: <MyCart></MyCart>
+        },
+        {
+            path:'/update/:id',
+            element: <UpdateProduct></UpdateProduct>
+        }
       ]
     },
   ]);

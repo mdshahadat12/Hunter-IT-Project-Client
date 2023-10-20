@@ -1,16 +1,19 @@
 import { useLoaderData } from "react-router-dom";
 import BrandCardContainer from "../Components/Home/BrandCardContainer";
-import HomeSlider from "../Components/Home/HomeSlider";
+import About from "./About";
+import Message from "./Message";
 
 const Home = () => {
   const data = useLoaderData()
   return (
     <div>
-      <div>
-          <HomeSlider></HomeSlider>
+      <div className="h-[450px] rounded-lg flex justify-center items-center bg-orange-300 my-10">
+        <h1 className="text-3xl font-bold">This is Banner</h1>
+          
       </div>
       <BrandCardContainer data={data}></BrandCardContainer>
-      <div className="text-center text-6xl">this is home</div>
+      <About></About>
+      <Message></Message>
     </div>
   );
 };

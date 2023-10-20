@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const ProductDetails = () => {
   const id = useParams();
-  const LoadData = useLoaderData();
+  console.log(id.id);
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const findData = LoadData?.find((res) => res.id == id.id);
-    setData(findData);
-  }, [LoadData, id]);
+    fetch(`http://localhost:5000/product/${id.id}`)
+    .then(res=>res.json())
+    .then(data=>{
+      setData(data);
+      console.log(data);
+    })
+  }, [id]);
 
   console.log(data);
   const { Bname, description, imglink, name, price, rating, type } = data || {};

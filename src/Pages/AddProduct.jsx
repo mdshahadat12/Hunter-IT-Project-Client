@@ -12,6 +12,22 @@ const AddProduct = () => {
         const description = form.description.value;
         const formValue = {imglink,name,Bname,type,price,rating, description}
         console.log(formValue);
+
+        fetch('http://localhost:5000/product',{
+      method:'POST',
+      headers:{ 'Content-Type': 'application/json' },
+      body:JSON.stringify(formValue)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+      console.log(data)
+      if(data.insertedId){
+        alert("Product Added")
+      }
+    })
+
+
+
     }
   return (
     <div className="bg-orange-300 p-10 rounded-lg">

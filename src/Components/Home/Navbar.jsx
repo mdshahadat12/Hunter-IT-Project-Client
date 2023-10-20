@@ -7,9 +7,9 @@ import { auth } from "../../../firebase/firebase.config";
 
 const Navbar = () => {
   const { user, setUser } = useContext(AuthContext);
-// const user = "ss"
+  // const user = "ss"
   const [click, setClick] = useState(false);
-  const [clickb, setClickb] = useState(false)
+  const [clickb, setClickb] = useState(false);
 
   const hndleClick = () => {
     setClick(!click);
@@ -19,22 +19,25 @@ const Navbar = () => {
       .then(() => {
         console.log("Sign-out successful");
         setUser(null);
-        setClick(!click)
+        setClick(!click);
       })
       .catch((error) => {
         console.log(error.massage);
       });
   };
 
-  const toggleNav =()=>{
-    setClickb(!clickb)
-  }
+  const toggleNav = () => {
+    setClickb(!clickb);
+  };
 
   return (
     <nav className="bg-white border-gray-200 relative dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to={"/"} className="flex items-center">
-          <img src='https://i.ibb.co/3MmnJW0/download.png' className="h-8 mr-3" />
+          <img
+            src="https://i.ibb.co/3MmnJW0/download.png"
+            className="h-8 mr-3"
+          />
           <span className="self-center text-blue-500 text-2xl font-extrabold whitespace-nowrap">
             Hunter IT
           </span>
@@ -78,11 +81,11 @@ const Navbar = () => {
             <ul className="py-2" aria-labelledby="user-menu-button">
               <li>
                 <Link
-                  onClick={()=>setClick(!click)}
-                  to={"/dashboard"}
+                  onClick={() => setClick(!click)}
+                  to={"/cart"}
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
-                  Dashboard
+                  My Cart
                 </Link>
               </li>
               <li>
@@ -113,7 +116,7 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`${clickb? '': 'hidden'} w-full md:block md:w-auto`}
+          className={`${clickb ? "" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-user"
         >
           <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -149,7 +152,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/dashboard"}
+                    to={"/cart"}
                     className={({ isActive, isPending }) =>
                       isPending
                         ? "pending"
@@ -158,28 +161,29 @@ const Navbar = () => {
                         : "block py-2 pl-3 pr-4 text-gray-900 rounded"
                     }
                   >
-                    Dashboard
+                    My Cart
+                  </NavLink>
+                </li>
+
+                <li>
+                  <NavLink
+                    to={"/addproduct"}
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? "pending"
+                        : isActive
+                        ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                        : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                    }
+                  >
+                    AddProduct
                   </NavLink>
                 </li>
               </>
             )}
             <li>
               <NavLink
-                to={"/addproduct"}
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-blue-700 underline block py-2 pl-3 pr-4"
-                    : "block py-2 pl-3 pr-4 text-gray-900 rounded"
-                }
-              >
-                AddProduct
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"/brandpage"}
+                to={"/contact"}
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -189,6 +193,20 @@ const Navbar = () => {
                 }
               >
                 Contact Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/about"}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-blue-700 underline block py-2 pl-3 pr-4"
+                    : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                }
+              >
+                About Us
               </NavLink>
             </li>
           </ul>
