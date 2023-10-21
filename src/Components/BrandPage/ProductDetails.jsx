@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import ReactStars from "react-rating-stars-component";
+import Loading from "../Loading";
 
 const ProductDetails = () => {
   const id = useParams();
-  console.log(id.id);
+  // console.log(id.id);
   const [data, setData] = useState({});
   const [added, setAdded] = useState([]);
+  const [Load,setLoad] = useState(true)
 
   useEffect(() => {
     fetch(
@@ -15,21 +18,27 @@ const ProductDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         setData(data);
-        console.log(data);
+        setLoad(false)
+        // console.log(data);
       });
     fetch("https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/cart")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setAdded(data);
       });
   }, [id]);
 
-  console.log(data);
-  const { _id, Bname, description, imglink, name, price, rating, type } =
-    data || {};
+  // console.log(data);
+  const { _id, Bname, description, imglink, name, price, rating, type } = data || {};
+  
+  const RatingSize = {
+    size: 30,
+    value: parseFloat(rating),
+    edit: false
+  };
 
-  console.log(data);
+  console.log(RatingSize);
 
   const handleAddCart = (id) => {
     const oldData = added?.map((data) => data._id == id);
@@ -54,7 +63,7 @@ const ProductDetails = () => {
     }
   };
 
-  return (
+  return Load ? <Loading></Loading> : (
     <div>
       <div className="md:grid mt-10 md:grid-cols-6">
         <img
@@ -72,8 +81,8 @@ const ProductDetails = () => {
           <h1 className="font-semibold my-3 bg-orange-600 rounded-lg px-2 text-lg">
             Product Type: {type}
           </h1>
-          <h1 className="font-semibold my-3 bg-orange-600 rounded-lg px-2 text-lg">
-            Rating: {rating}
+          <h1 className="font-semibold my-3 bg-orange-600 rounded-lg p-2 text-lg">
+          <ReactStars {...RatingSize} />
           </h1>
           <button
             onClick={() => handleAddCart(_id)}

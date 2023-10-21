@@ -31,7 +31,7 @@ const BrandsPage = () => {
         <div>
           <Slider upData={upData}></Slider>
           <h1 className="text-center font-bold text-3xl mb-5">Products</h1>
-          <div className="grid grid-cols-2 gap-5 my-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10">
             {upData?.map((data) => (
               <ProductCard key={data._id} data={data}></ProductCard>
             ))}

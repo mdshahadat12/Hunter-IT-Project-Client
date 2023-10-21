@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
-
 import { Link } from "react-router-dom";
-
+import ReactStars from "react-rating-stars-component";
 
 const ProductCard = ({data}) => {
   const {_id,Bname,description,imglink,name,price,rating,type} = data ||{};
+  const RatingSize = {
+    size: 30,
+    value: parseFloat(rating),
+    edit: false
+  };
   return (
 
       <div className="bg-white border border-gray-200 rounded-lg shadow">
@@ -26,7 +30,7 @@ const ProductCard = ({data}) => {
           Price: ${price}
         </h5>
         <h5 className="mb-2 tracking-tight">
-          Rating: {rating}
+        <ReactStars {...RatingSize} activeColor="#FF0000" />
         </h5>
         </div>
 

@@ -7,7 +7,7 @@ const About = () => {
     <div className={`${IsDark?"bg-gray-900 text-white":"bg-orange-300"} mb-32 mt-16 p-10 rounded-lg`}>
       <h1 className="text-2xl text-center font-bold my-10">Who We Are?</h1>
 
-      <p className={`${IsDark?"text-white":"text-gray-700"} mb-12`}>
+      <p className={`${IsDark?"text-gray-300":"text-gray-700"} mb-12`}>
         Welcome to the Hunter IT, your one-stop destination for all things
         mobile! Whether you are a tech enthusiast, a smartphone shopper, or
         someone who simply loves staying updated with the latest mobile trends,
