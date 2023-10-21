@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import { useContext } from "react";
 
 const Footer = () => {
+    const {IsDark} = useContext(AuthContext)
     return (
 
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className={`${IsDark?"bg-gray-900 text-white":"bg-white"} mt-10 rounded-lg`}>
             <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between">
                     <div className="flex flex-col justify-between">

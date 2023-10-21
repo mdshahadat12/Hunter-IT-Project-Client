@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
   const id = useParams();
@@ -25,26 +26,32 @@ const UpdateProduct = () => {
     };
     console.log(formValue);
 
-    fetch(`http://localhost:5000/product/${id.id}`,{
-      method:"PUT",
-      headers:{
-        "content-type":"application/json"
-      },
-      body:JSON.stringify(formValue)
-    })
+    fetch(
+      `https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/product/${id.id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formValue),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         console.log(data);
-        alert('updated')
+        if (data.modifiedCount) {
+          Swal.fire("Good job!", "Successfuly Updated!", "success");
+        }
       });
-
   };
   console.log(id.id);
   const [data, setData] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id.id}`)
+    fetch(
+      `https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/product/${id.id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data);

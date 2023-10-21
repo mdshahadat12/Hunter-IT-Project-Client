@@ -1,21 +1,37 @@
 /* eslint-disable react/prop-types */
 
-const CartCard = ({ card,dataArray,setUpdateCard }) => {
-  
+import Swal from "sweetalert2";
+
+const CartCard = ({ card, dataArray, setUpdateCard }) => {
   const handleRemove = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/cart/${id}`,{
-      method:"DELETE"
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data);
-      if(data.deletedCount>0){
-        const filterData = dataArray?.filter(data=> data._id !== id)
-        setUpdateCard(filterData)
-        alert('removed')
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(
+          `https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/cart/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              const filterData = dataArray?.filter((data) => data._id !== id);
+              setUpdateCard(filterData);
+              Swal.fire("Good job!", "Successfuly Removed!", "success");
+            }
+          });
       }
-    })
+    });
   };
   const { _id, description, imglink, name } = card || {};
   return (

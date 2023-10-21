@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
   const id = useParams();
@@ -8,13 +9,15 @@ const ProductDetails = () => {
   const [added, setAdded] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id.id}`)
+    fetch(
+      `https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/product/${id.id}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setData(data);
         console.log(data);
       });
-    fetch("http://localhost:5000/cart")
+    fetch("https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/cart")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -28,25 +31,27 @@ const ProductDetails = () => {
 
   console.log(data);
 
-  const handleAddCart = () => {
-    const oldData = added?.map((data) => data._id == _id);
-    console.log(oldData);
-    if (oldData.length>0) {
-      return alert("already have");
+  const handleAddCart = (id) => {
+    const oldData = added?.map((data) => data._id == id);
+    console.log(oldData, id);
+    if (oldData[0]) {
+      return Swal.fire("Already Added!", "Already Added!", "error");
+    } else {
+      fetch("https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/cart", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.acknowledged) {
+            Swal.fire("Good job!", "Successfuly Added!", "success");
+          }
+        });
     }
-
-    fetch("http://localhost:5000/cart", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        alert("added on cart");
-      });
   };
 
   return (
@@ -71,7 +76,7 @@ const ProductDetails = () => {
             Rating: {rating}
           </h1>
           <button
-            onClick={handleAddCart}
+            onClick={() => handleAddCart(_id)}
             className="font-semibold my-3 bg-orange-600 rounded-lg py-2 text-white cursor-pointer text-lg"
           >
             Add to Cart

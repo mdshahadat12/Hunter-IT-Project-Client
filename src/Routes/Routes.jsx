@@ -14,59 +14,77 @@ import UpdateProduct from "../Pages/UpdateProduct";
 import PrivetRoute from "./PrivetRoute";
 import Erorr from "../Pages/Erorr";
 
-
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <HomeLayOut/>,
-      errorElement: <Erorr></Erorr>,
-      children:[
-        {
-            path:'/',
-            element:<Home/>,
-            loader:()=>fetch('/brandName.json')
-        },
-        {
-            path:'/login',
-            element: <Login></Login>
-        },
-        {
-            path:'/registration',
-            element: <Registration></Registration>
-        },
-        {
-            path:'/addproduct',
-            element: <PrivetRoute><AddProduct></AddProduct></PrivetRoute>
-        },
-        {
-            path:'/brand/:id',
-            element: <BrandsPage></BrandsPage>,
-        },
-        {
-            path:'/product/:id',
-            element: <PrivetRoute><ProductDetails></ProductDetails></PrivetRoute>,
-        },
-        {
-            path:'/profile',
-            element: <PrivetRoute><Profile></Profile></PrivetRoute>
-        },
-        {
-            path:'/about',
-            element: <About></About>
-        },
-        {
-            path:'/contact',
-            element: <Message></Message>
-        },
-        {
-            path:'/cart',
-            element: <PrivetRoute><MyCart></MyCart></PrivetRoute>,
-            loader:()=> fetch('http://localhost:5000/cart')
-        },
-        {
-            path:'/update/:id',
-            element: <PrivetRoute><UpdateProduct></UpdateProduct></PrivetRoute>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <HomeLayOut />,
+    errorElement: <Erorr></Erorr>,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+        loader: () => fetch("/brandName.json"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/registration",
+        element: <Registration></Registration>,
+      },
+      {
+        path: "/addproduct",
+        element: (
+          <PrivetRoute>
+            <AddProduct></AddProduct>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/brand/:id",
+        element: <BrandsPage></BrandsPage>,
+      },
+      {
+        path: "/product/:id",
+        element: (
+          <PrivetRoute>
+            <ProductDetails></ProductDetails>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivetRoute>
+            <Profile></Profile>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/contact",
+        element: <Message></Message>,
+      },
+      {
+        path: "/cart",
+        element: (
+          <PrivetRoute>
+            <MyCart></MyCart>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/update/:id",
+        element: (
+          <PrivetRoute>
+            <UpdateProduct></UpdateProduct>
+          </PrivetRoute>
+        ),
+      },
+    ],
+  },
+]);

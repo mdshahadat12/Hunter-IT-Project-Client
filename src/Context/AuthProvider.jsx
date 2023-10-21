@@ -10,6 +10,7 @@ const GitHubProvider = new GithubAuthProvider();
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null)
     const [loading,setLoading] = useState(true)
+    const [IsDark,setIsDark] = useState(false)
 
     useEffect(()=>{
         const UnSubscribe = onAuthStateChanged(auth,cUser=>{
@@ -37,6 +38,9 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithPopup(auth, GitHubProvider)
     }
+    const handledarkmood = ()=>{
+        setIsDark(!IsDark)
+    }
 
     const values = {
         signupWithEmail,
@@ -46,6 +50,8 @@ const AuthProvider = ({children}) => {
         signInWithGoogle,
         signInWithGitHub,
         loading,
+        handledarkmood,
+        IsDark,
     }
     return (
         <AuthContext.Provider value={values}>

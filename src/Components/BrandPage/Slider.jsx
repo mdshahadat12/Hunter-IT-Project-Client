@@ -13,7 +13,7 @@ import "./style.css";
 import { Pagination, Navigation } from "swiper/modules";
 
 export default function Slider({upData}) {
-  console.log(upData);
+  // console.log(upData);
   return (
     <div className="my-16">
       <Swiper

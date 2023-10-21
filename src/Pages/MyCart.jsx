@@ -1,12 +1,29 @@
-import { useLoaderData } from "react-router-dom";
 import CartCard from "../Components/Cart/CartCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Loading from "../Components/Loading";
 
 const MyCart = () => {
-  const dataArray = useLoaderData()
-  const [updateCard,setUpdateCard] = useState(dataArray)
+
+  const [dataArray,setDataArray] = useState([]);
+  // const [updateArray,setUpdateArray] = useState(dataArray);
+  const [updateCard,setUpdateCard] = useState(dataArray);
+  const [load,setLoad] = useState(true)
     console.log(dataArray);
-    return (
+    console.log(updateCard);
+    // console.log(updateArray);
+    useEffect(()=>{
+      fetch("https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/cart")
+      .then(res=>res.json())
+      .then(data=>{
+        // console.log(data);
+        setUpdateCard(data)
+        setDataArray(data)
+        setLoad(false)
+      })
+
+    },[])
+
+    return load ? <Loading></Loading> : (
         <div>
         <h1 className="text-2xl text-center font-bold text-green-500 my-10">
           Your Product Cart

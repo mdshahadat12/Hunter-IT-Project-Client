@@ -2,27 +2,30 @@ import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import Slider from "./Slider";
 import { useEffect, useState } from "react";
+import Loading from "../Loading";
 
 const BrandsPage = () => {
   const brandP = useParams();
   const brand = brandP.id;
-  // // const data = useLoaderData()
   const [upData, setUpData] = useState([]);
+  const [Load,setLoad] = useState(true)
+  // // const data = useLoaderData()
   // console.log(brand);
-  // // console.log(data);
+
 
   useEffect(() => {
-    fetch("http://localhost:5000/product")
+    fetch("https://hunter-it-server-irg2xm2pc-mdshahadat12.vercel.app/product")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         const filterData = data?.filter((data) => data.Bname == brand);
         setUpData(filterData);
-        console.log(filterData);
+        setLoad(false)
+        // console.log(filterData);
       });
   }, [brand]);
 
-  return (
+  return Load ? <Loading></Loading> : (
     <div>
       {upData.length > 0 ? (
         <div>
@@ -36,7 +39,9 @@ const BrandsPage = () => {
         </div>
       ) : (
         <div className="h-[50vh] flex items-center justify-center">
-            <h1 className="font-bold text-3xl">Have not any available Products!</h1>
+          <h1 className="font-bold text-3xl">
+            Have not any available Products!
+          </h1>
         </div>
       )}
     </div>

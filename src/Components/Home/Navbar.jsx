@@ -6,7 +6,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../../firebase/firebase.config";
 
 const Navbar = () => {
-  const { user, setUser } = useContext(AuthContext);
+  const { user, setUser,handledarkmood,IsDark } = useContext(AuthContext);
   // const user = "ss"
   const [click, setClick] = useState(false);
   const [clickb, setClickb] = useState(false);
@@ -31,12 +31,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 relative dark:bg-gray-900">
+    <nav className={`${IsDark?'bg-gray-900':""} border-gray-200 rounded-lg relative`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to={"/"} className="flex items-center">
           <img
             src="https://i.ibb.co/3MmnJW0/download.png"
-            className="h-8 mr-3"
+            className="h-8 mr-3 rounded-md"
           />
           <span className="self-center text-orange-500 text-2xl font-extrabold whitespace-nowrap">
             Hunter IT
@@ -119,14 +119,14 @@ const Navbar = () => {
           className={`${clickb ? "" : "hidden"} w-full md:block md:w-auto`}
           id="navbar-user"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className={`${IsDark?'bg-gray-900 text-white':"bg-gray-50"} flex flex-col font-medium p-4 md:p-0 mt-4 border  border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0`}>
             <li>
               <NavLink
                 to={"/"}
                 className={({ isActive }) =>
                   isActive
                     ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                    : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                    : "block py-2 pl-3 pr-4 rounded"
                 }
               >
                 Home
@@ -142,7 +142,7 @@ const Navbar = () => {
                         ? "pending"
                         : isActive
                         ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                        : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                        : "block py-2 pl-3 pr-4 rounded"
                     }
                   >
                     Profile
@@ -154,7 +154,7 @@ const Navbar = () => {
                     className={({ isActive }) =>
                       isActive
                         ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                        : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                        : "block py-2 pl-3 pr-4 rounded"
                     }
                   >
                     My Cart
@@ -169,7 +169,7 @@ const Navbar = () => {
                         ? "pending"
                         : isActive
                         ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                        : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                        : "block py-2 pl-3 pr-4  rounded"
                     }
                   >
                     AddProduct
@@ -185,7 +185,7 @@ const Navbar = () => {
                     ? "pending"
                     : isActive
                     ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                    : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                    : "block py-2 pl-3 pr-4  rounded"
                 }
               >
                 Contact Us
@@ -199,11 +199,14 @@ const Navbar = () => {
                     ? "pending"
                     : isActive
                     ? "text-orange-700 underline block py-2 pl-3 pr-4"
-                    : "block py-2 pl-3 pr-4 text-gray-900 rounded"
+                    : "block py-2 pl-3 pr-4  rounded"
                 }
               >
                 About Us
               </NavLink>
+            </li>
+            <li>
+              <button onClick={handledarkmood} className={`${IsDark?'bg-white text-black':'bg-gray-900 text-white'} m-1 py-1 px-3 rounded-md border-2 border-black`}>{IsDark?"Light":"Dark"}</button>
             </li>
           </ul>
         </div>
