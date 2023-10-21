@@ -11,7 +11,7 @@ const Home = () => {
   // console.log(IsDark);
   return (
     <div>
-      <div className={`${IsDark ? 'bg-gray-900' : 'bg-orange-100' } rounded-lg my-10 bg-orange-100 mx-auto flex flex-col-reverse md:flex-row items-center justify-center md:p-9`}>
+      <div className={`${IsDark ? 'bg-gray-900' : 'bg-orange-100' } rounded-lg my-10 mx-auto flex flex-col-reverse md:flex-row items-center justify-center md:p-9`}>
         <div className="flex flex-col md:w-1/2 items-center text-center justify-center">
           <h3 className={`${IsDark?"text-white":""} lg:text-3xl text-2xl font-semibold mb-9`}>
             -SALE FEVER-
