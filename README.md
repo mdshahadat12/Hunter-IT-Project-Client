@@ -1,7 +1,7 @@
 # Gamers Tech
 
 - [Live Site Link](https://hunter-it-a57f9.web.app/)
-
+- Technology : JavaScript, React, Firebase, NodeJS, MongoDB
 
 # Website Feature
 
